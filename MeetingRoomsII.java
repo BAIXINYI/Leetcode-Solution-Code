@@ -51,6 +51,7 @@ public class MeetingRoomsII {
 
 
     public int minMeetingRooms2(Interval[] intervals) {
+        if(intervals == null || intervals.length == 0) return 0;
         Arrays.sort(intervals, (a, b) -> a.start - b.start);
         PriorityQueue<Interval> heap = new PriorityQueue<>(intervals.length, (a, b) -> a.end - b.end);
         heap.offer(intervals[0]);
